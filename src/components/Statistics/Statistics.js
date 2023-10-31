@@ -1,17 +1,46 @@
-
+import styled from "styled-components";
 export const Statistics = ({ title, stats }) => {
   return (
     <section className="statistics">
-          <h2 className="title">{title}</h2>
+          <StatisticsH2 className="title">{title}</StatisticsH2>
 
-          <ul className="stat-list">
+          <StatisticsUl className="stat-list">
               {stats.map(({ id, label, percentage }) => (
-               <li className="item" key={id}>
+               <StatisticsLi className="item" key={id}>
                       <span className="label">{label}</span>
                       <span className="percentage">{percentage}%</span>
-                  </li>    
+                  </StatisticsLi>    
          ))}    
-  </ul>
+  </StatisticsUl>
 </section>
   );
 };
+
+const StatisticsUl = styled.ul`
+
+list-style: none;
+display:flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+
+`
+const StatisticsLi = styled.li`
+
+list-style: none;
+display:flex;
+flex-direction:column;
+justify-content: center;
+align-items: center;
+gap: 10px;
+
+`
+const StatisticsH2 = styled.h2`
+
+list-style: none;
+display:flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+
+`

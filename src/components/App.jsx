@@ -4,8 +4,9 @@ import { Profile } from './Profile/Profile';
 import { user } from './Profile/user';
 import { friends } from './FriendList/FriendListData';
 import { FriendList } from './FriendList/FriendList';
-import { transactions } from './TransactionHistoryData';
-import { TransactionHistory } from './TransactionHistory';
+import { transactions } from './TransactionHistory/TransactionHistoryData';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
+
 export const App = () => {
   return (
     <div>

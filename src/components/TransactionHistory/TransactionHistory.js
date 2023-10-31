@@ -1,6 +1,7 @@
+import styled from "styled-components";
 export const TransactionHistory = ({ items }) => {
   return (
-    <table className="transaction-history">
+    <TransactionHistoryTable className="transaction-history">
       <thead>
         <tr>
           <th>Type</th>
@@ -17,11 +18,16 @@ export const TransactionHistory = ({ items }) => {
           </tr>
         ))}
       </tbody>
-    </table>
+    </TransactionHistoryTable>
   );
 }
+const TransactionHistoryTable = styled.table`
 
+list-style: none;
+margin: 0 auto;
+text-align: center;
 
+`
 
 
 
