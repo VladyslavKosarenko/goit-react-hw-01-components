@@ -2,7 +2,7 @@ import styled from "styled-components";
 export const Statistics = ({ title, stats }) => {
   return (
     <section className="statistics">
-          <StatisticsH2 className="title">{title}</StatisticsH2>
+      { title ? <StatisticsH2 className="title">{title}</StatisticsH2> : null}
 
           <StatisticsUl className="stat-list">
               {stats.map(({ id, label, percentage }) => (

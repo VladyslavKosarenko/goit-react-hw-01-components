@@ -2,16 +2,27 @@ import styled from "styled-components"
 export const FriendList = ({ friends }) => {
   return (
     <FriendListUl className="friend-list">
-      {friends.map(({ avatar, name, isOnline, id }) => (
-        <li className="item" key={id}>
-          <FriendListSpan $isOnline={isOnline} className="status" />
-          <img className="avatar" src={avatar} alt="User avatar" width="48" />
-          <FriendListP className="name">{name}</FriendListP>
-        </li>
+      {friends.map((friend) => (
+        <FriendListItem
+          avatar={friend.avatar}
+          name={friend.name}
+          isOnline={friend.isOnline}
+          id={friend.id}
+          key={friend.id}></FriendListItem>
       ))}
     </FriendListUl>
   );
 };
+const FriendListItem = ({ avatar, name, isOnline, id }) => {
+  return (
+      <li className="item" key={id}>
+          <FriendListSpan $isOnline={isOnline} className="status" />
+          <img className="avatar" src={avatar} alt="User avatar" width="48" />
+          <FriendListP className="name">{name}</FriendListP>
+        </li>
+    
+  )
+}
 const FriendListUl = styled.ul`
 
 list-style: none;
